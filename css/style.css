@@ -21,10 +21,16 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 .header {
+  height: 64px;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
 }
 
 .header .container {
+  width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +66,107 @@ body {
 
 ul {
   display: none;
+  background: var(--section-background);
+  min-width: 200px;
+  text-align: center;
+  letter-spacing: 2px;
+  border-radius: 7px;
+  transition: 0.3s;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 15px);
+}
+li {
+  list-style: none;
+  margin-top: 5px;
+}
+li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 15px;
+  transition: 0.3s;
+}
+li a:hover {
+  padding-left: 25px;
+  transform: scale(1.4);
 }
 .header .links:hover .icon span:nth-child(2) {
   width: 100%;
+}
+ul::before {
+  content: " ";
+  border-width: 10px;
+  border-style: solid;
+  position: absolute;
+  right: 5px;
+  top: -19px;
+  border-color: transparent transparent var(--section-background) transparent;
+}
+
+.header .links:hover ul {
+  display: block;
+  transition: 0.3s;
+}
+
+ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.Landing {
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: url(./../Images/landing.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  max-width: 100%;
+}
+.content h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: var(--main-color);
+}
+.content p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+.feature {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+
+.featureContent {
+  display: flex;
+}
+
+.feature-item {
+  flex: 1 0 30%; /* تحديد نسبة العرض لكل عنصر */
+  padding: 20px;
+  text-align: center;
+}
+.feature-item .icon {
+  color: var(--main-color);
+}
+.feature-item h3 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+.feature-item p {
+  line-height: 1.8;
+  color: #777;
+  font-size: 17px;
 }
